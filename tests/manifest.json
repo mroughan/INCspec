@@ -1,0 +1,25 @@
+{
+  "spec_version": "0.1.0-draft",
+  "comparison_notes": {
+    "csv_cells": "Compare CSV cell values after converting implementation-native values to strings unless a test states otherwise.",
+    "metadata_values": "Compare metadata values with their specified integer or string types.",
+    "errors": "Exact exception classes and message text are implementation-specific; compare error_code where possible."
+  },
+  "schedules": [
+    {
+      "name": "positive",
+      "path": "positive.json",
+      "description": "Valid INC and plain CSV read tests."
+    },
+    {
+      "name": "negative",
+      "path": "negative.json",
+      "description": "Invalid files that conforming readers or schema readers should reject."
+    },
+    {
+      "name": "roundtrip",
+      "path": "roundtrip.json",
+      "description": "Canonical write/read/write round-trip tests."
+    }
+  ]
+}

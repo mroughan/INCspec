@@ -1,0 +1,174 @@
+{
+  "spec_version": "0.1.0-draft",
+  "tests": [
+    {
+      "id": "read-basic-inc",
+      "action": "read",
+      "fixture": "../fixtures/positive/basic.inc",
+      "expect": {
+        "metadata": {
+          "title": {"type": "string", "value": "Basic data"},
+          "version": {"type": "integer", "value": 1},
+          "columns": {
+            "score": {"type": "string", "value": "points"}
+          }
+        },
+        "csv": {
+          "columns": ["name", "score"],
+          "rows": [["Ada", "21"], ["Babbage", "12"]]
+        }
+      }
+    },
+    {
+      "id": "read-plain-csv",
+      "action": "read",
+      "fixture": "../fixtures/positive/plain.csv",
+      "expect": {
+        "metadata": {},
+        "csv": {
+          "columns": ["name", "score"],
+          "rows": [["Ada", "21"], ["Babbage", "12"]]
+        }
+      }
+    },
+    {
+      "id": "read-semicolon-structure",
+      "action": "read",
+      "fixture": "../fixtures/positive/semicolon_structure.inc",
+      "expect": {
+        "metadata": {
+          "title": {"type": "string", "value": "Semicolon data"},
+          "structure": {
+            "delimiter": {"type": "string", "value": ";"}
+          }
+        },
+        "csv": {
+          "columns": ["name", "score"],
+          "rows": [["Ada", "21"], ["Babbage", "12"]]
+        }
+      }
+    },
+    {
+      "id": "read-tab-structure",
+      "action": "read",
+      "fixture": "../fixtures/positive/tab_structure.inc",
+      "expect": {
+        "metadata": {
+          "title": {"type": "string", "value": "Tab data"},
+          "structure": {
+            "delim": {"type": "string", "value": "tab"}
+          }
+        },
+        "csv": {
+          "columns": ["name", "score"],
+          "rows": [["Ada", "21"], ["Babbage", "12"]]
+        }
+      }
+    },
+    {
+      "id": "read-quotechar-structure",
+      "action": "read",
+      "fixture": "../fixtures/positive/quotechar_structure.inc",
+      "expect": {
+        "metadata": {
+          "title": {"type": "string", "value": "Quote character data"},
+          "structure": {
+            "quotechar": {"type": "string", "value": "'"}
+          }
+        },
+        "csv": {
+          "columns": ["name", "note"],
+          "rows": [["Ada", "hello, world"]]
+        }
+      }
+    },
+    {
+      "id": "read-escapechar-structure",
+      "action": "read",
+      "fixture": "../fixtures/positive/escapechar_structure.inc",
+      "expect": {
+        "metadata": {
+          "title": {"type": "string", "value": "Escape character data"},
+          "structure": {
+            "escapechar": {"type": "string", "value": "|"}
+          }
+        },
+        "csv": {
+          "columns": ["name", "note"],
+          "rows": [["Ada", "say \"hi\""]]
+        }
+      }
+    },
+    {
+      "id": "read-header-footerskip-structure",
+      "action": "read",
+      "fixture": "../fixtures/positive/header_footerskip_structure.inc",
+      "expect": {
+        "metadata": {
+          "title": {"type": "string", "value": "Header and footer data"},
+          "structure": {
+            "header": {"type": "integer", "value": 2},
+            "footerskip": {"type": "integer", "value": 1}
+          }
+        },
+        "csv": {
+          "columns": ["name", "score"],
+          "rows": [["Ada", "21"], ["Babbage", "12"]]
+        }
+      }
+    },
+    {
+      "id": "read-metadata-edge-cases",
+      "action": "read",
+      "fixture": "../fixtures/positive/metadata_edge_cases.inc",
+      "expect": {
+        "metadata": {
+          "title": {"type": "string", "value": "Metadata edge cases"},
+          "empty": {"type": "string", "value": ""},
+          "hash": {"type": "string", "value": "#"},
+          "semicolon": {"type": "string", "value": ";"},
+          "path": {"type": "string", "value": "C:\\tmp\\data"},
+          "quoted": {"type": "string", "value": "say \"hi\" with \\"},
+          "id": {"type": "string", "value": "007"},
+          "offset": {"type": "integer", "value": -3}
+        },
+        "csv": {
+          "columns": ["name", "value"],
+          "rows": [["Ada", "1"]]
+        }
+      }
+    },
+    {
+      "id": "read-unicode",
+      "action": "read",
+      "fixture": "../fixtures/positive/unicode.inc",
+      "expect": {
+        "metadata": {
+          "title": {"type": "string", "value": "Café temperatures"},
+          "city": {"type": "string", "value": "München"},
+          "測定": {"type": "string", "value": "温度"},
+          "columns": {
+            "temperature": {"type": "string", "value": "°C"},
+            "名前": {"type": "string", "value": "participant name"}
+          }
+        },
+        "csv": {
+          "columns": ["name", "temperature", "note"],
+          "rows": [["Anaïs", "21", "café"], ["李", "22", "東京"]]
+        }
+      }
+    },
+    {
+      "id": "validate-schema-success",
+      "action": "validate_schema",
+      "schema_fixture": "../fixtures/positive/schema.inc",
+      "target_fixture": "../fixtures/positive/schema_target_valid.inc",
+      "expect": {
+        "valid": true,
+        "missing": [],
+        "forbidden": [],
+        "extra": []
+      }
+    }
+  ]
+}

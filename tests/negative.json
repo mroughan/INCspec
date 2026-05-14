@@ -1,0 +1,65 @@
+{
+  "spec_version": "0.1.0-draft",
+  "tests": [
+    {
+      "id": "reject-missing-closing-delimiter",
+      "action": "read",
+      "fixture": "../fixtures/negative/missing_closing_delimiter.inc",
+      "expect_error": {"error_code": "missing_closing_delimiter"}
+    },
+    {
+      "id": "reject-empty-section",
+      "action": "read",
+      "fixture": "../fixtures/negative/empty_section.inc",
+      "expect_error": {"error_code": "empty_section"}
+    },
+    {
+      "id": "reject-invalid-key",
+      "action": "read",
+      "fixture": "../fixtures/negative/invalid_key.inc",
+      "expect_error": {"error_code": "invalid_name"}
+    },
+    {
+      "id": "reject-invalid-section-key",
+      "action": "read",
+      "fixture": "../fixtures/negative/invalid_section_key.inc",
+      "expect_error": {"error_code": "invalid_name"}
+    },
+    {
+      "id": "reject-repeated-key",
+      "action": "read",
+      "fixture": "../fixtures/negative/repeated_key.inc",
+      "expect_error": {"error_code": "duplicate_key"}
+    },
+    {
+      "id": "reject-unsupported-structure-key",
+      "action": "read",
+      "fixture": "../fixtures/negative/unsupported_structure_key.inc",
+      "expect_error": {"error_code": "unsupported_structure_key"}
+    },
+    {
+      "id": "reject-invalid-structure-character",
+      "action": "read",
+      "fixture": "../fixtures/negative/invalid_structure_char.inc",
+      "expect_error": {"error_code": "invalid_structure_value"}
+    },
+    {
+      "id": "reject-invalid-structure-integer",
+      "action": "read",
+      "fixture": "../fixtures/negative/invalid_structure_int.inc",
+      "expect_error": {"error_code": "invalid_structure_value"}
+    },
+    {
+      "id": "reject-schema-deep-path",
+      "action": "read_schema",
+      "fixture": "../fixtures/negative/schema_deep_path.inc",
+      "expect_error": {"error_code": "invalid_schema_path"}
+    },
+    {
+      "id": "reject-schema-duplicate-requirement",
+      "action": "read_schema",
+      "fixture": "../fixtures/negative/schema_duplicate_requirement.inc",
+      "expect_error": {"error_code": "duplicate_schema_requirement"}
+    }
+  ]
+}

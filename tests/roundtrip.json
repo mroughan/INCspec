@@ -1,0 +1,45 @@
+{
+  "spec_version": "0.1.0-draft",
+  "tests": [
+    {
+      "id": "write-basic-canonical",
+      "action": "write_read_compare",
+      "input": {
+        "metadata": {
+          "title": "Roundtrip data",
+          "version": 1,
+          "columns": {
+            "score": "points"
+          }
+        },
+        "csv": {
+          "columns": ["name", "score"],
+          "rows": [["Ada", "21"], ["Babbage", "12"]]
+        }
+      },
+      "expect_canonical_fixture": "../fixtures/roundtrip/basic_expected.inc"
+    },
+    {
+      "id": "write-escaped-canonical",
+      "action": "write_read_compare",
+      "input": {
+        "metadata": {
+          "id": "007",
+          "note": "say \"hi\" with \\",
+          "path": "C:\\tmp\\data"
+        },
+        "csv": {
+          "columns": ["name", "value"],
+          "rows": [["Ada", "1"]]
+        }
+      },
+      "expect_canonical_fixture": "../fixtures/roundtrip/escaped_expected.inc"
+    },
+    {
+      "id": "read-write-basic-stable",
+      "action": "read_write_compare",
+      "input_fixture": "../fixtures/roundtrip/basic_expected.inc",
+      "expect_canonical_fixture": "../fixtures/roundtrip/basic_expected.inc"
+    }
+  ]
+}
