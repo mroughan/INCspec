@@ -55,8 +55,8 @@ it has its own version number.
 
 Known implementation repositories:
 
-- Julia: `IncCSV.jl`
-- Python: `IncCSV.py`
+- Julia: [`IncCSV.jl`](https://github.com/mroughan/IncCSV.jl)
+- Python: [`IncCSV.py`](https://github.com/lewismath/IncCSV.py)
 
 ## Status
 
@@ -69,4 +69,3 @@ other languages.
 This package was developed with assistance from OpenAI Codex, an AI coding
 assistant based on GPT-5. Code design decisions were human mediated, and the
 resulting code was manually reviewed.
-
