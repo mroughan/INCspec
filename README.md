@@ -63,3 +63,10 @@ Known implementation repositories:
 This is an initial draft specification. It captures the current format contract
 used by the Julia implementation and the desired interoperability target for
 other languages.
+
+## Disclosure
+
+This package was developed with assistance from OpenAI Codex, an AI coding
+assistant based on GPT-5. Code design decisions were human mediated, and the
+resulting code was manually reviewed.
+

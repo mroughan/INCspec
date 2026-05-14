@@ -3,13 +3,15 @@
 This document is informational.
 
 These conventions are not required for INC conformance, but they are useful for
-portable files and consistent implementations.
+portable files and consistent implementations. 
 
 ## File Extensions
 
 Use `.inc` for INC files.
 
 Use `.csv` for ordinary CSV files without metadata.
+
+Note that INC readers/writers do not require the specific suffixes, but they are useful for people and systems using INC.
 
 ## Metadata Naming
 
@@ -31,9 +33,9 @@ Common section names:
 - `[structure]` for CSV parser hints;
 - `[preservation]` for long-term management metadata;
 - `[rights]` for licensing and access metadata;
-- `[parameters]` for generating-code parameters;
-- `[statistical]` for sample sizes and statistical qualities;
-- `[process]` for processing or data generation notes.
+- `[parameters]` for generating-code parameters, eg the parameters of a simulation that generated the data;
+- `[statistical]` for sample sizes and statistical qualities of the data;
+- `[process]` for processing or data generation notes, such as the name and version of the software that generated (or last touched) the data.
 
 ## Dates
 
@@ -47,7 +49,9 @@ publication_date = "2026-05"
 ```
 
 Quoting dates avoids accidental interpretation by tools that extend the base
-metadata type system.
+metadata type system. 
+
+Using the ordering yyyyy-mm-dd results in simple date sorting.
 
 ## Identifiers
 
@@ -67,4 +71,4 @@ the host language rather than storing them in the file.
 ## Deterministic Writing
 
 Writers should sort metadata keys and sections for readable diffs and stable
-round-trip tests.
+round-trip tests. However, we only guarantee semantic stability not syntactic stability, e.g., if extra white spaces appear in a source file, when it is rewritten, the white spaces may be stripped. 

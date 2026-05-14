@@ -2,6 +2,8 @@
 
 This document is informational.
 
+![INC implementation flowchart](implementation-flowchart.svg)
+
 ## Reader Sketch
 
 1. Read the input as UTF-8 text.

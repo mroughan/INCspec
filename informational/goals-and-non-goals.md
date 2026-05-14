@@ -34,7 +34,7 @@ INC is not:
 
 INC prefers:
 
-- explicit rules over clever inference;
+- explicit (simple) rules over clever inference;
 - a small allowlist over exposing every parser option;
 - readable text over compactness;
 - compatibility with CSV tools over richer embedded structure;

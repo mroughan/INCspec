@@ -48,7 +48,7 @@ whitespace.
 After the dash run, a delimiter line MAY contain a metadata-style comment
 beginning with `#` or `;`.
 
-Examples of delimiter lines:
+Examples of valid delimiter lines:
 
 ```text
 ---
@@ -60,6 +60,13 @@ Examples of delimiter lines:
 
 The dash characters MUST be consecutive. A line such as `- - -` is not a
 delimiter.
+
+Delimiter-like text may appear inside metadata values because only complete
+delimiter lines terminate the metadata block. For example:
+
+```text
+key = "this is not a delimiter ---"
+```
 
 ## CSV Component
 

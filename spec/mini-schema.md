@@ -57,7 +57,7 @@ All other values SHOULD be treated as true.
 A schema MAY include a `[description]` section. It maps schema field paths to
 human-readable descriptions.
 
-Implementations MAY also accept `[descriptions]` as a read alias.
+Implementations MAY also accept `[descriptions]` as a read-only alias.
 
 ## Field Paths
 
