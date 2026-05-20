@@ -11,6 +11,10 @@ This page lists known INC implementations and related tooling.
 - Python: [`IncCSV.py`](https://github.com/lewismath/IncCSV.py)
   - Reads and writes INC files from Python.
   - Provides schema validation, summaries, and optional pandas integration.
+- JavaScript: [`IncCSV.js`](../IncCSV.js/)
+  - Reads and writes INC text in browsers and Node.js.
+  - Provides `[structure]` support, mini-schema validation, and a Node
+    conformance test harness.
 
 ## Conformance
 

@@ -50,9 +50,9 @@ specified values and types.
 
 ## Implementations
 
-This specification is intended to be consistent with the Julia and Python INC
-implementations. The specification is not tied to any implementation version;
-it has its own version number.
+This specification is intended to be consistent with known INC implementations
+in Julia, Python, and JavaScript. The specification is not tied to any
+implementation version; it has its own version number.
 
 Known implementation repositories are listed in
 [INC Implementations](implementations.md).
