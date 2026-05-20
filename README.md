@@ -19,6 +19,7 @@ human-readable metadata, a clear separator, and an ordinary CSV component.
 - `conventions/`: recommended conventions that are not required for conformance.
 - `informational/`: explanatory, non-normative supporting documents.
 - `scripts/`: optional helper scripts for future validation tooling.
+- `implementations.md`: known INC implementations and related tooling.
 
 ## Normative Documents
 
@@ -53,10 +54,8 @@ This specification is intended to be consistent with the Julia and Python INC
 implementations. The specification is not tied to any implementation version;
 it has its own version number.
 
-Known implementation repositories:
-
-- Julia: [`IncCSV.jl`](https://github.com/mroughan/IncCSV.jl)
-- Python: [`IncCSV.py`](https://github.com/lewismath/IncCSV.py)
+Known implementation repositories are listed in
+[INC Implementations](implementations.md).
 
 ## Status
 
