@@ -20,7 +20,7 @@ Conforming readers MUST support the following `[structure]` keys:
 | `delimiter` | character | Alias for `delim`. |
 | `quotechar` | character | Quote character used by the CSV component. |
 | `escapechar` | character | Escape character used by the CSV component. |
-| `comment` | string | Comment marker for CSV component lines. |
+| `comment` | single-character string | Comment marker for CSV component lines. |
 | `header` | integer | CSV component line containing column names. |
 | `footerskip` | integer | Number of trailing CSV component rows to ignore. |
 
@@ -57,6 +57,10 @@ The string-valued keys are:
 - `comment`.
 
 Readers MUST reject non-string values for string-valued keys.
+
+Readers MUST reject `comment` values that are not exactly one Unicode scalar
+value after metadata parsing. For example, `comment = #` is valid, but
+`comment = //` is not.
 
 `comment` applies only to the CSV component. Metadata comments remain fixed as
 `#` and `;`.

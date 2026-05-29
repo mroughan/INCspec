@@ -23,7 +23,8 @@ Readers MUST reject:
 - `[structure]` values with the wrong type;
 - schema paths deeper than one section level;
 - schema paths with invalid path components;
-- schema fields declared in more than one requirement class.
+- schema fields declared more than once across requirement declarations,
+  including aliases for the same requirement class.
 
 ## Writer Errors
 

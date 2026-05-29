@@ -31,7 +31,8 @@ This document is informational.
 1. Read the schema as an INC file.
 2. Merge canonical requirement sections and accepted aliases.
 3. Validate schema field paths.
-4. Reject duplicate field paths across requirement classes.
+4. Reject duplicate field paths across requirement declarations, including
+   aliases for the same requirement class.
 5. Build field paths from the target metadata.
 6. Check missing `MUST` fields.
 7. Check present `MUST_NOT` fields.

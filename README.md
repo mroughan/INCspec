@@ -20,6 +20,8 @@ human-readable metadata, a clear separator, and an ordinary CSV component.
 - `informational/`: explanatory, non-normative supporting documents.
 - `scripts/`: optional helper scripts for future validation tooling.
 - `implementations.md`: known INC implementations and related tooling.
+- `CHANGELOG.md`: notable specification and conformance changes.
+- `CONTRIBUTIONS.md`: contribution guidance.
 
 ## Normative Documents
 

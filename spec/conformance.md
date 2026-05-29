@@ -38,8 +38,9 @@ Writers SHOULD use deterministic metadata ordering.
 An implementation claiming mini-schema support MUST:
 
 - read canonical requirement sections;
-- apply RFC 2119 aliases as read aliases, if aliases are supported;
-- reject duplicate paths across requirement classes;
+- apply requirement-section aliases as read aliases, if aliases are supported;
+- reject duplicate paths across requirement declarations, including aliases for
+  the same requirement class;
 - reject paths deeper than one section level;
 - validate `MUST`, `MUST_NOT`, `OPTIONAL`, and `allow_extra`.
 

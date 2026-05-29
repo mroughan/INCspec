@@ -158,7 +158,7 @@ Current error codes:
 | `unsupported_structure_key` | `[structure]` key is outside the allowlist. |
 | `invalid_structure_value` | `[structure]` value has the wrong type or cannot be coerced. |
 | `invalid_schema_path` | Schema path is malformed or too deep. |
-| `duplicate_schema_requirement` | Schema path appears in more than one requirement class. |
+| `duplicate_schema_requirement` | Schema path appears more than once across requirement declarations. |
 
 For early implementations, it is acceptable for the harness to treat any thrown
 reader error as passing a negative test, then tighten the mapping later.

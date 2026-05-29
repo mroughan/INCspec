@@ -56,6 +56,17 @@ whitespace      = { " " | "\t" } ;
 newline         = "\n" | "\r\n" ;
 ```
 
+## Line Endings
+
+The metadata block is line-oriented. Readers MUST accept metadata lines
+terminated by either LF (`\n`) or CRLF (`\r\n`).
+
+Writers SHOULD emit LF (`\n`) in the metadata block for portability and stable
+text diffs. Writers SHOULD_NOT mix LF and CRLF within the metadata block.
+
+The CSV component is parsed by the host CSV parser. Implementations SHOULD
+avoid rewriting CSV line endings unless they are writing a new file.
+
 ## Names
 
 Names are used for top-level keys, section names, and section keys.

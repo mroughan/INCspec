@@ -26,7 +26,7 @@ Readers MAY accept these aliases:
 | --- | --- |
 | `MUST` | `REQUIRED`, `SHALL` |
 | `MUST_NOT` | `SHALL_NOT` |
-| `OPTIONAL` | `MAY` |
+| `OPTIONAL` | `MAY`, `MAYBE` |
 
 Aliases are read-only conveniences. Writers SHOULD emit canonical section names.
 
@@ -58,6 +58,7 @@ A schema MAY include a `[description]` section. It maps schema field paths to
 human-readable descriptions.
 
 Implementations MAY also accept `[descriptions]` as a read-only alias.
+Implementations MAY accept `[describe]` as a legacy read-only alias.
 
 ## Field Paths
 
@@ -74,7 +75,11 @@ Each path component MUST satisfy the metadata name rules.
 
 A schema field path MUST appear in at most one requirement class.
 
-Readers MUST reject schemas where the same path appears in more than one of:
+Readers MUST reject schemas where the same path appears more than once across
+all requirement declarations, including duplicate declarations within aliases
+for the same requirement class.
+
+For duplicate checking, the requirement declarations are:
 
 - `MUST`;
 - `MUST_NOT`;
