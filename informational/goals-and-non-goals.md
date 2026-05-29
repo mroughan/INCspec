@@ -32,10 +32,16 @@ INC is not:
 
 ## Design Biases
 
-INC prefers:
+In general, follow the philosophy of Postel's law, or the robustness
+principle "be conservative in what you do, be liberal in what you
+accept from others".
+
+More specifically INC prefers:
 
 - explicit (simple) rules over clever inference;
 - a small allowlist over exposing every parser option;
 - readable text over compactness;
 - compatibility with CSV tools over richer embedded structure;
 - preserving common workflows over maximal expressiveness.
+
+
